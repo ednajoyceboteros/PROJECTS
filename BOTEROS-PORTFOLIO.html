@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edna Joyce Boteros - Data Analytics Portfolio</title>
+    
+    <!--
+    ============================================================
+    📸 HOW TO ADD YOUR IMAGES TO THIS PORTFOLIO
+    ============================================================
+    
+    STEP 1: Save your image files in the SAME FOLDER as this HTML file
+    
+    STEP 2: Find these sections and replace them:
+    
+    🖼️ PROFILE PHOTO (Line ~850):
+    Find: <div class="profile-photo">EJ</div>
+    Replace with: <div class="profile-photo"><img src="your-photo.jpg" alt="Profile"></div>
+    
+    📊 PROJECT IMAGES:
+    Find each project visual section and add <img> tag:
+    
+    Project 1 - National Book Store (Line ~1050):
+    Add: <img src="nbs-dashboard.jpg" alt="NBS Dashboard">
+    
+    Project 2 - Plated Restaurant (Line ~1075):
+    Add: <img src="plated-dashboard.jpg" alt="Restaurant Dashboard">
+    
+    Project 3 - SUC Infrastructure (Line ~1100):
+    Add: <img src="suc-dashboard.jpg" alt="SUC Dashboard">
+    
+    Project 4 - Employee Attrition (Line ~1125):
+    Add: <img src="attrition-analysis.jpg" alt="Attrition Model">
+    
+    Project 5 - ASD System (Line ~1150):
+    Add: <img src="asd-system.jpg" alt="ASD System">
+    
+    ✅ TIPS:
+    - Use JPG or PNG format
+    - Keep filenames simple (no spaces)
+    - Make sure images are in the same folder as this HTML
+    
+    ============================================================
+    -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a2a4e;
+            --accent: #ff6b4a;
+            --secondary: #3d5a80;
+            --light: #f8f9fa;
+            --text: #2d3436;
+            --text-light: #636e72;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--light);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a[target="_blank"] {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .nav-links a[target="_blank"]:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,107,74,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, 50px) rotate(180deg); }
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: var(--primary);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero h1 .accent-text {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255,107,74,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(255,107,74,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            opacity: 0;
+            animation: fadeInRight 1s ease 0.3s forwards;
+            transform: translateX(50px);
+        }
+
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            font-weight: 700;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            background: white;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative;
+            width: 100%;
+        }
+
+        .stats-grid::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: white;
+            padding: 2.5rem;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        .highlight-box h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+        }
+
+        .highlight-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .highlight-list li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-list li::before {
+            content: '▸';
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .skills {
+            background: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--light);
+            padding: 2rem;
+            border-top: 3px solid var(--accent);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .skill-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            color: var(--text);
+            border: 1px solid #ddd;
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            padding: 3rem;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+        }
+
+        .project-card:hover {
+            box-shadow: 0 10px 50px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        .project-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .project-visual-link {
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .project-visual-link:hover {
+            opacity: 0.9;
+        }
+
+        .project-info h3 {
+            transition: color 0.3s;
+        }
+
+        .project-card:hover .project-info h3 {
+            color: var(--accent);
+        }
+
+        .project-card:nth-child(even) {
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .project-card:nth-child(even) .project-info {
+            order: -1;
+        }
+
+        .project-number {
+            font-size: 5rem;
+            font-weight: 700;
+            color: rgba(255,107,74,0.1);
+            font-family: 'Crimson Pro', serif;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .project-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-type {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .project-highlights {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .project-highlights li {
+            padding: 0.5rem 0;
+            color: var(--text);
+            display: flex;
+            align-items: start;
+            gap: 0.8rem;
+        }
+
+        .project-highlights li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            background: #f0f0f0;
+        }
+
+        .project-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: 'Crimson Pro', serif;
+            color: white;
+            position: relative;
+        }
+
+        .project-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .education {
+            background: var(--primary);
+            color: white;
+        }
+
+        .education .section-label {
+            color: var(--accent);
+        }
+
+        .education .section-title {
+            color: white;
+        }
+
+        .education .section-description {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .education-card {
+            background: rgba(255,255,255,0.05);
+            padding: 3rem;
+            border-left: 4px solid var(--accent);
+            backdrop-filter: blur(10px);
+        }
+
+        .education-card h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-meta {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .education-card p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+        }
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--light);
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+            opacity: 0.7;
+        }
+
+        .contact-details p {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .contact-cta {
+            background: var(--light);
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .contact-cta h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 968px) {
+            .hero .container,
+            .about-content,
+            .contact-grid,
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card:nth-child(even) .project-info {
+                order: 0;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .profile-photo {
+                width: 180px;
+                height: 180px;
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Edna Joyce Boteros</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="https://drive.google.com/file/d/1TxWfmkOqbsyC2OgmD8HHzrAJDMB4IZni/view?usp=drive_link" target="_blank">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Data Analytics Student</div>
+                <h1>Transforming Data into <span class="accent-text">Actionable Insights</span></h1>
+                <p class="hero-subtitle">4th Year Information Systems student specializing in business intelligence, data visualization, and predictive analytics.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <div class="profile-photo">
+                        <img src="profile-picture.webp" alt="Edna Joyce Boteros">
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>7</h3>
+                            <p>Featured Projects</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>486hrs</h3>
+                            <p>Internship Ready</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>4yrs</h3>
+                            <p>BSIS Program</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>3</h3>
+                            <p>Power BI Dashboards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Get to Know Me</div>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <p>I'm a passionate 4th year Bachelor of Science in Information Systems student majoring in Business Analytics at West Visayas State University, currently completing my final semester with thesis work and internship requirements. My expertise lies in transforming complex datasets into actionable business insights through data analytics and business intelligence solutions.</p>
+                    <p>Throughout my academic career, I've worked on diverse analytics projects ranging from retail performance dashboards to workforce optimization systems and government infrastructure tracking. I believe in transforming raw data into meaningful insights that not only solve problems but also empower organizations to make informed decisions.</p>
+                    <p>Currently, I'm actively seeking a 486-hour internship opportunity where I can apply my analytical skills, contribute to data-driven projects, and continue growing as a data analyst in Iloilo City's vibrant tech community.</p>
+                </div>
+                <div class="highlight-box">
+                    <h3>What I Bring</h3>
+                    <ul class="highlight-list">
+                        <li>Business intelligence & data visualization</li>
+                        <li>Predictive analytics & modeling</li>
+                        <li>Power BI dashboard development</li>
+                        <li>Frontend development skills</li>
+                        <li>Strong attention to detail</li>
+                        <li>Data-driven problem solving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Technical Expertise</div>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-description">A comprehensive analytics toolkit built through academic projects, hands-on development, and continuous learning.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">BI</div>
+                    <h3>Business Intelligence</h3>
+                    <p>Creating strategic dashboards and analytics solutions for data-driven decision-making.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Dashboard Design</span>
+                        <span class="skill-tag">KPI Tracking</span>
+                        <span class="skill-tag">Data Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">DA</div>
+                    <h3>Data Analytics</h3>
+                    <p>Transforming data into actionable insights through visualization and statistical analysis.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Predictive Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">FE</div>
+                    <h3>Frontend Development</h3>
+                    <p>Building user-friendly interfaces and web applications with modern technologies.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">DB</div>
+                    <h3>Database Management</h3>
+                    <p>Designing and optimizing database structures for efficient data storage and retrieval.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Database Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Portfolio</div>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">A selection of data analytics and development projects demonstrating technical expertise and problem-solving abilities. Click on project images or titles to view live dashboards and interactive demos where available.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <a href="https://drive.google.com/file/d/1ncceVX5WCjMz7zlHT-2nmDsXwOL6XbQB/view?usp=drive_link" target="_blank" class="project-visual-link">
+                        <div class="project-visual">
+                            <img src="national-book-store.webp" alt="National Book Store BI Dashboard">
+                        </div>
+                    </a>
+                    <div class="project-info">
+                        <div class="project-number">01</div>
+                        <span class="project-type">Retail Analytics</span>
+                        <a href="https://drive.google.com/file/d/1ncceVX5WCjMz7zlHT-2nmDsXwOL6XbQB/view?usp=drive_link" target="_blank" class="project-link">
+                            <h3>National Book Store BI Dashboard</h3>
+                        </a>
+                        <p class="project-description">Developed comprehensive retail analytics dashboard for National Book Store, analyzing customer performance across branches, product categories, and geographic locations.</p>
+                        <ul class="project-highlights">
+                            <li>Multi-dimensional customer performance analysis</li>
+                            <li>Store branch comparison and optimization</li>
+                            <li>Category and product performance tracking</li>
+                            <li>Geographic location-based analytics with mapping</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">R</span>
+                            <span class="tech-badge">Retail Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <a href="https://app.powerbi.com/links/425mXbzd8T?ctid=5221a3cf-f8b1-432e-afce-c6ab25dc9cce&pbi_source=linkShare" target="_blank" class="project-visual-link">
+                        <div class="project-visual">
+                            <img src="forecasting1.webp" alt="Plated Restaurant BI Dashboard">
+                        </div>
+                    </a>
+                    <div class="project-info">
+                        <div class="project-number">02</div>
+                        <span class="project-type">Business Intelligence</span>
+                        <a href="https://app.powerbi.com/links/425mXbzd8T?ctid=5221a3cf-f8b1-432e-afce-c6ab25dc9cce&pbi_source=linkShare" target="_blank" class="project-link">
+                            <h3>Restaurant Workforce Optimization</h3>
+                        </a>
+                        <p class="project-description">Created a comprehensive BI solution for Plated Restaurant Iloilo focusing on employee scheduling optimization and workforce management analytics.</p>
+                        <ul class="project-highlights">
+                            <li>Identified potential annual savings of ₱504,000</li>
+                            <li>Comprehensive data architecture design</li>
+                            <li>Interactive Power BI dashboards for executives</li>
+                            <li>Strategic workforce management insights</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">Data Analysis</span>
+                            <span class="tech-badge">Business Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <a href="https://app.powerbi.com/links/AQ09BWup60?ctid=5221a3cf-f8b1-432e-afce-c6ab25dc9cce&pbi_source=linkShare" target="_blank" class="project-visual-link">
+                        <div class="project-visual">
+                            <img src="suc.webp" alt="SUC Infrastructure Dashboard">
+                        </div>
+                    </a>
+                    <div class="project-info">
+                        <div class="project-number">03</div>
+                        <span class="project-type">Government Analytics</span>
+                        <a href="https://app.powerbi.com/links/AQ09BWup60?ctid=5221a3cf-f8b1-432e-afce-c6ab25dc9cce&pbi_source=linkShare" target="_blank" class="project-link">
+                            <h3>SUC Infrastructure Projects Dashboard</h3>
+                        </a>
+                        <p class="project-description">Created strategic dashboard for State Universities and Colleges (SUC) infrastructure project monitoring, tracking budget allocation, project status, and completion rates across multiple institutions.</p>
+                        <ul class="project-highlights">
+                            <li>₱6B total budget tracking across 994 projects</li>
+                            <li>Real-time project status monitoring</li>
+                            <li>Multi-university comparative analysis</li>
+                            <li>Budget vs. appropriation analysis by institution</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">Government Data</span>
+                            <span class="tech-badge">Project Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <a href="https://colab.research.google.com/drive/1rlU2N2g87UTnrbpOt88ulsli645Uj9tO?usp=sharing" target="_blank" class="project-visual-link">
+                        <div class="project-visual">
+                            <div class="project-placeholder" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">
+                                <span style="position: relative; z-index: 2;">ML</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="project-info">
+                        <div class="project-number">04</div>
+                        <span class="project-type">Predictive Analytics</span>
+                        <a href="https://colab.research.google.com/drive/1rlU2N2g87UTnrbpOt88ulsli645Uj9tO?usp=sharing" target="_blank" class="project-link">
+                            <h3>Employee Attrition Prediction</h3>
+                        </a>
+                        <p class="project-description">Developed predictive analytics model for Utopian Tech Solutions to identify and address employee attrition patterns using machine learning techniques.</p>
+                        <ul class="project-highlights">
+                            <li>Achieved 99.87% model accuracy</li>
+                            <li>Comprehensive data analysis and visualization</li>
+                            <li>Actionable insights for HR strategy</li>
+                            <li>Professional documentation and presentation</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Machine Learning</span>
+                            <span class="tech-badge">Data Visualization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-visual">
+                        <img src="asd.webp" alt="ASD Monitoring System">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-number">05</div>
+                        <span class="project-type">Capstone Thesis</span>
+                        <h3>ASD Monitoring System</h3>
+                        <p class="project-description">Developed a comprehensive monitoring system for developmental therapy and assessment of children with Autism Spectrum Disorder in partnership with iChildren Therapy Center.</p>
+                        <ul class="project-highlights">
+                            <li>Laravel-based therapy center management system</li>
+                            <li>Parent portal for tracking child progress</li>
+                            <li>Administrative interfaces for staff management</li>
+                            <li>Payment tracking and audit log systems</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-visual">
+                        <img src="sagana.jpg" alt="SAGANA Agricultural Platform">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-number">06</div>
+                        <span class="project-type">Web Application</span>
+                        <h3>SAGANA: Agricultural Information Platform</h3>
+                        <p class="project-description">Developed a web-based platform designed for farmers and agriculturists to access free agricultural knowledge, educational modules, video content, and real-time community collaboration using a single-page application architecture.</p>
+                        <ul class="project-highlights">
+                            <li>Single-page application for optimal performance</li>
+                            <li>Educational modules and video content library</li>
+                            <li>Real-time community collaboration features</li>
+                            <li>Free agricultural knowledge resources</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Web Development</span>
+                            <span class="tech-badge">SPA Architecture</span>
+                            <span class="tech-badge">Community Platform</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-visual">
+                        <img src="mnt.jpg" alt="M&T Ordering System UI">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-number">07</div>
+                        <span class="project-type">UI/UX Design</span>
+                        <h3>M&T Ordering System UI</h3>
+                        <p class="project-description">Designed a CSS-based ordering system interface that visually represents the ordering flow and layout for a business website, focusing on user experience and clean visual presentation.</p>
+                        <ul class="project-highlights">
+                            <li>CSS-based responsive interface design</li>
+                            <li>Clear ordering flow visualization</li>
+                            <li>Business website integration</li>
+                            <li>User-friendly layout structure</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">UI Design</span>
+                            <span class="tech-badge">Frontend</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Academic Background</div>
+                <h2 class="section-title">Education</h2>
+                <p class="section-description">Building a strong foundation in information systems and data analytics.</p>
+            </div>
+            <div class="education-card fade-in">
+                <h3>Bachelor of Science in Information Systems</h3>
+                <div class="education-meta">West Visayas State University • 2022 - 2026</div>
+                <p>Currently completing my final semester with focus on thesis work and internship requirements. Specialized in data analytics, business intelligence, Power BI dashboard development, and frontend web technologies. Developed expertise in transforming complex datasets into strategic business insights through comprehensive analytics projects spanning retail, restaurant operations, government infrastructure, and healthcare technology systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Let's Connect</div>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">Open for internship opportunities and collaboration. Let's build something great together.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <a href="mailto:ednajoyce.boteros@wvsu.edu.ph">
+                            <div class="contact-icon">@</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>ednajoyce.boteros@wvsu.edu.ph</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+639104559905">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>+63 910 455 9905</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Iloilo City, Philippines</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://www.linkedin.com/in/ednajoyce-boteros-93061a379" target="_blank">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <p>ednajoyce-boteros</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-cta fade-in">
+                    <h3>Ready for Internship</h3>
+                    <p>I'm actively seeking a 486-hour internship opportunity in Iloilo City where I can contribute my analytical skills and grow as a data analyst.</p>
+                    <a href="https://mail.google.com/mail/?view=cm&to=ednajoyce.boteros@wvsu.edu.ph" target="_blank" class="btn btn-primary">Send Message</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Edna Joyce Boteros. Transforming data into insights.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
